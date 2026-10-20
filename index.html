@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Prático para uma Entrevista de Emprego</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2563eb',
+                            darkBlue: '#1e40af',
+                            navy: '#0f172a',
+                            lightBg: '#f8fafc',
+                            cardYellow: '#fef3c7',
+                            cardBlue: '#e0f2fe',
+                            cardPink: '#ffe4e6',
+                            cardGreen: '#dcfce7',
+                        }
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(4deg)' },
+                        },
+                        pulseSlow: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.6 },
+                        }
+                    },
+                    animation: {
+                        float: 'float 5s ease-in-out infinite',
+                        floatSlow: 'float 7s ease-in-out infinite',
+                        pulseSlow: 'pulseSlow 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: #334155;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .checkbox-custom:checked + label div {
+            background-color: #2563eb;
+            border-color: #2563eb;
+        }
+        .checkbox-custom:checked + label div svg {
+            display: block;
+        }
+        .checkbox-custom:checked ~ label span.item-text {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-700 antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Ambient Floating Geometric Shapes -->
+    <div class="fixed top-20 left-6 w-10 h-10 bg-emerald-400 rounded-lg shadow-lg opacity-80 animate-float pointer-events-none z-10 hidden lg:block"></div>
+    <div class="fixed top-1/3 right-10 w-8 h-12 bg-blue-500 rounded-md shadow-md opacity-75 animate-floatSlow pointer-events-none z-10 hidden lg:block"></div>
+    <div class="fixed bottom-1/4 left-12 w-10 h-10 border-4 border-orange-400 rounded-full shadow-sm opacity-80 animate-float pointer-events-none z-10 hidden lg:block"></div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2 text-2xl font-bold text-slate-900 tracking-tight">
+                <span class="p-2 bg-blue-600 text-white rounded-lg inline-flex items-center justify-center">
+                    <i data-lucide="briefcase" class="w-6 h-6"></i>
+                </span>
+                <span>Guia<span class="text-blue-600">Carreira</span></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#preparacao" class="hover:text-blue-600 transition-colors">Preparação</a>
+                <a href="#perguntas" class="hover:text-blue-600 transition-colors">Perguntas</a>
+                <a href="#postura" class="hover:text-blue-600 transition-colors">Postura</a>
+                <a href="#erros" class="hover:text-blue-600 transition-colors">Erros Comuns</a>
+                <a href="#dicas" class="hover:text-blue-600 transition-colors">Dicas</a>
+                <a href="#checklist" class="hover:text-blue-600 transition-colors">Checklist</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-4">
+                <a href="#checklist" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md hover:shadow-lg shadow-blue-500/20 active:scale-95">
+                    Baixar Checklist
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. CAPA / HERO SECTION -->
+        <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-50/80 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Content Left -->
+                    <div class="lg:col-span-6 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i> Guia Prático de Entrevista
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                            Conquiste sua <br class="hidden sm:inline"/>
+                            <span class="text-blue-600">Vaga dos Sonhos</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            O guia prático e definitivo para dominar qualquer entrevista de emprego com confiança, clareza e autoridade.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#preparacao" class="w-full sm:w-auto px-7 py-3.5 rounded-xl text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 group">
+                                Começar Agora 
+                                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#dicas" class="w-full sm:w-auto px-7 py-3.5 rounded-xl text-base font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center">
+                                Saber Mais
+                            </a>
+                        </div>
+
+                        <!-- Micro Trust Indicators -->
+                        <div class="pt-6 border-t border-slate-200/60 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-500">
+                            <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> Dicas testadas</span>
+                            <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> Modelos de respostas</span>
+                            <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> Checklist 100% grátis</span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Graphic / Illustration -->
+                    <div class="lg:col-span-6 flex justify-center lg:justify-end items-center">
+                        <img 
+                            src="hero.png" 
+                            alt="Ilustração da Entrevista de Emprego" 
+                            class="w-full h-auto object-contain hover:scale-105 transition-transform duration-500 ease-out"
+                            loading="eager"
+                        />
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS BANNER -->
+        <section class="bg-slate-900 text-white py-12 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
+                    <div class="pt-4 md:pt-0">
+                        <div class="text-3xl sm:text-4xl font-bold text-blue-400 mb-1">95%</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Aumento de Confiança</div>
+                    </div>
+                    <div class="pt-4 md:pt-0">
+                        <div class="text-3xl sm:text-4xl font-bold text-amber-400 mb-1">+50</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Exemplos Práticos</div>
+                    </div>
+                    <div class="pt-4 md:pt-0">
+                        <div class="text-3xl sm:text-4xl font-bold text-emerald-400 mb-1">3x</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Mais Chance de Aprovação</div>
+                    </div>
+                    <div class="pt-4 md:pt-0">
+                        <div class="text-3xl sm:text-4xl font-bold text-purple-400 mb-1">100%</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Gratuito &amp; Acessível</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PREPARAÇÃO (Antes da Entrevista) -->
+        <section id="preparacao" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-md">Etapa Inicial</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Como se Preparar Antes da Entrevista</h2>
+                    <p class="text-slate-600 mt-3 text-base">O sucesso de uma entrevista é definido em 80% antes mesmo de você dizer "olá". Siga estes pilares fundamentais.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-amber-50/70 border border-amber-200/60 rounded-2xl p-8 hover:-translate-y-1.5 transition-all duration-300 shadow-sm hover:shadow-md">
+                        <div class="w-14 h-14 bg-amber-400/20 text-amber-700 rounded-xl flex items-center justify-center mb-6 font-bold text-xl">
+                            <i data-lucide="search" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">1. Pesquise a Empresa</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Investigue a cultura, os valores, os produtos e notícias recentes sobre a organização. Descubra os desafios atuais do setor.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-amber-200/50">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> Acesse o LinkedIn da empresa</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-600"></i> Entenda o modelo de negócio</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-sky-50/70 border border-sky-200/60 rounded-2xl p-8 hover:-translate-y-1.5 transition-all duration-300 shadow-sm hover:shadow-md">
+                        <div class="w-14 h-14 bg-sky-400/20 text-sky-700 rounded-xl flex items-center justify-center mb-6 font-bold text-xl">
+                            <i data-lucide="file-text" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">2. Dominar o Seu Currículo</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Esteja pronto para detalhar cada experiência descrita no seu currículo. Conecte suas conquistas passadas aos requisitos do cargo.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-sky-200/50">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-600"></i> Lembre-se de dados e métricas</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-600"></i> Destaque projetos relevantes</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-rose-50/70 border border-rose-200/60 rounded-2xl p-8 hover:-translate-y-1.5 transition-all duration-300 shadow-sm hover:shadow-md">
+                        <div class="w-14 h-14 bg-rose-400/20 text-rose-700 rounded-xl flex items-center justify-center mb-6 font-bold text-xl">
+                            <i data-lucide="message-square" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">3. Treine sua Narrativa</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Pratique suas respostas em voz alta ou gravando a si mesmo. Use a técnica STAR (Situação, Tarefa, Ação, Resultado) para estruturar histórias.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 pt-2 border-t border-rose-200/50">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-600"></i> Seja claro e objetivo</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-rose-600"></i> Cronometre suas respostas (2-3 min)</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PERGUNTAS FREQUENTES -->
+        <section id="perguntas" class="py-20 bg-slate-50 border-y border-slate-200/60">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <span class="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-100/70 px-3 py-1 rounded-md">Guia Prático</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Perguntas Frequentes e Como Responder</h2>
+                    <p class="text-slate-600 mt-2 text-base">Clique nas perguntas para revelar a estratégia ideal e o que o recrutador realmente espera ouvir.</p>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <!-- Item 1 -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-blue-600 transition-colors focus:outline-none">
+                            <span class="text-lg flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">1</span>
+                                "Fale sobre você"
+                            </span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-slate-600 text-sm space-y-3">
+                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <p class="font-semibold text-slate-800 mb-1">🎯 Objetivo do Recrutador:</p>
+                                <p>Avaliar sua capacidade de síntese, comunicação e relevância profissional.</p>
+                            </div>
+                            <p class="pt-2"><strong class="text-slate-800">Como Estruturar:</strong> Siga a fórmula <em>Passado - Presente - Futuro</em>. Resuma sua trajetória recente, destaque sua principal conquista e explique por que a vaga atual é o próximo passo perfeito.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-blue-600 transition-colors focus:outline-none">
+                            <span class="text-lg flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">2</span>
+                                "Quais são seus pontos fortes e fracos?"
+                            </span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-slate-600 text-sm space-y-3">
+                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <p class="font-semibold text-slate-800 mb-1">🎯 Objetivo do Recrutador:</p>
+                                <p>Mapear autoconhecimento, maturidade e vontade de desenvolvimento contínuo.</p>
+                            </div>
+                            <p class="pt-2"><strong class="text-slate-800">Dica Prática:</strong> Para os pontos fortes, dê exemplos concretos. Para os fracos, escolha um ponto real em desenvolvimento e compartilhe o que você já está fazendo para superá-lo (evite respostas prontas como "sou perfeccionista").</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-blue-600 transition-colors focus:outline-none">
+                            <span class="text-lg flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">3</span>
+                                "Por que você quer trabalhar nesta empresa?"
+                            </span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-slate-600 text-sm space-y-3">
+                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <p class="font-semibold text-slate-800 mb-1">🎯 Objetivo do Recrutador:</p>
+                                <p>Descobrir se você realmente pesquisou a empresa e se existe fit cultural verdadeiro.</p>
+                            </div>
+                            <p class="pt-2"><strong class="text-slate-800">Dica Prática:</strong> Conecte seus valores pessoais com a missão da empresa. Cite projetos, produtos ou conquistas recentes da organização que você admira genuinamente.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left px-6 py-5 flex justify-between items-center font-bold text-slate-900 hover:text-blue-600 transition-colors focus:outline-none">
+                            <span class="text-lg flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">4</span>
+                                "Onde você se vê daqui a 5 anos?"
+                            </span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-slate-600 text-sm space-y-3">
+                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <p class="font-semibold text-slate-800 mb-1">🎯 Objetivo do Recrutador:</p>
+                                <p>Avaliar suas ambições de carreira e estabilidade a longo prazo.</p>
+                            </div>
+                            <p class="pt-2"><strong class="text-slate-800">Dica Prática:</strong> Foque no desenvolvimento de competências e em como você deseja crescer junto com a empresa, assumindo desafios maiores de forma realista.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. POSTURA PROFISSIONAL -->
+        <section id="postura" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-md">Comportamento</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Postura Profissional Impecável</h2>
+                    <p class="text-slate-600 mt-2 text-base">Sua atitude transmite competência antes mesmo das palavras serem pronunciadas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Feature 1 -->
+                    <div class="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-blue-300 hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Pontualidade</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Chegue com 10-15 minutos de antecedência. Em entrevistas virtuais, entre na sala de espera com 5 minutos de antecedência e teste seu equipamento.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-blue-300 hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                            <i data-lucide="user-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Apresentação Pessoal</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Adeque sua vestimenta à cultura da empresa. Na dúvida, opte pelo estilo esporte fino discreto e bem cuidado.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-blue-300 hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Comunicação Clara</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mantenha um tom de voz calmo e seguro. Evite gírias excessivas, vícios de linguagem ("né", "tipo") e responda exatamente o que foi perguntado.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50 hover:bg-white hover:border-blue-300 hover:shadow-lg transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                            <i data-lucide="smile" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Linguagem Corporal</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mantenha contato visual direto, boa postura na cadeira e sorria genuinamente. Evite cruzar os braços ou demonstrar impaciência.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ERROS COMUNS -->
+        <section id="erros" class="py-20 bg-rose-50/40 border-y border-rose-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-rose-600 tracking-wider uppercase bg-rose-100 px-3 py-1 rounded-md">Atenção</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Erros Comuns Que Podem Custar Sua Vaga</h2>
+                    <p class="text-slate-600 mt-2 text-base">Atitudes aparentemente inofensivas que frequentemente desqualificam ótimos candidatos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Error Card 1 -->
+                    <div class="bg-white border border-rose-200 rounded-2xl p-6 shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-rose-500/10 rounded-bl-full flex items-top justify-end p-3">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-rose-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 pr-8">Falar Mal de Empregadores Anteriores</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Mesmo que sua experiência passada tenha sido negativa, nunca critique ex-chefes ou colegas. Isso demonstra falta de ética e inteligência emocional.
+                        </p>
+                    </div>
+
+                    <!-- Error Card 2 -->
+                    <div class="bg-white border border-rose-200 rounded-2xl p-6 shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-rose-500/10 rounded-bl-full flex items-top justify-end p-3">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-rose-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 pr-8">Não Fazer Perguntas ao Recrutador</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Quando o recrutador pergunta "Você tem alguma dúvida?", responder "não" transmite desinteresse. Sempre prepare 2 a 3 perguntas inteligentes.
+                        </p>
+                    </div>
+
+                    <!-- Error Card 3 -->
+                    <div class="bg-white border border-rose-200 rounded-2xl p-6 shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-rose-500/10 rounded-bl-full flex items-top justify-end p-3">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-rose-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 pr-8">Demonstrar Falta de Foco e Mentir</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Exagerar ou mentir no currículo sempre vem à tona durante perguntas aprofundadas. Seja transparente sobre suas habilidades atuais.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. DICAS DO RECRUTADOR -->
+        <section id="dicas" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-emerald-600 tracking-wider uppercase bg-emerald-50 px-3 py-1 rounded-md">Insights de RH</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Dicas de Quem Decide a Contratação</h2>
+                    <p class="text-slate-600 mt-2 text-base">Principais aprendizados e segredos revelados por recrutadores durante simulações reais de entrevistas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Dica 1 -->
+                    <div class="bg-emerald-50/50 border border-emerald-200/60 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2.5 bg-emerald-600 text-white rounded-lg">
+                                <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg">Autenticidade Conecta</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Recrutadores percebem respostas "decoradas". Apresente quem você realmente é, mostrando sua humanidade e capacidade de adaptação.
+                        </p>
+                    </div>
+
+                    <!-- Dica 2 -->
+                    <div class="bg-emerald-50/50 border border-emerald-200/60 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2.5 bg-emerald-600 text-white rounded-lg">
+                                <i data-lucide="target" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg">Foque nos Resultados</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Não diga apenas o que você fazia; mostre o impacto da sua atuação. Números, porcentagens e melhorias de processos fazem você se destacar.
+                        </p>
+                    </div>
+
+                    <!-- Dica 3 -->
+                    <div class="bg-emerald-50/50 border border-emerald-200/60 rounded-2xl p-6 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2.5 bg-emerald-600 text-white rounded-lg">
+                                <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-lg">O Agradecimento Pós-Entrevista</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Enviar um breve e-mail de agradecimento até 24 horas após a entrevista reforça seu interesse legítimo na vaga e demonstra excelente etiqueta profissional.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CHECKLIST FINAL -->
+        <section id="checklist" class="py-20 bg-slate-900 text-white relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-14">
+                    <span class="text-xs font-bold text-blue-400 tracking-wider uppercase bg-blue-900/50 border border-blue-700/50 px-3 py-1 rounded-md">Checklist do Candidato</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-3">Pronto para Arrasar? Conferência Final</h2>
+                    <p class="text-slate-300 mt-2 text-base">Marque os itens à medida que for concluindo seus preparativos antes da entrevista.</p>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 space-y-4 backdrop-blur-sm shadow-xl">
+                    
+                    <!-- Checklist Item 1 -->
+                    <div class="flex items-start gap-4 p-3 hover:bg-slate-700/40 rounded-xl transition-colors">
+                        <input type="checkbox" id="check1" class="hidden checkbox-custom">
+                        <label for="check1" class="flex items-center gap-4 cursor-pointer w-full">
+                            <div class="w-6 h-6 border-2 border-slate-400 rounded-md flex items-center justify-center shrink-0 transition-all">
+                                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+                            </div>
+                            <span class="item-text text-slate-200 text-sm sm:text-base font-medium">Pesquisei a história, produtos e cultura da empresa.</span>
+                        </label>
+                    </div>
+
+                    <!-- Checklist Item 2 -->
+                    <div class="flex items-start gap-4 p-3 hover:bg-slate-700/40 rounded-xl transition-colors">
+                        <input type="checkbox" id="check2" class="hidden checkbox-custom">
+                        <label for="check2" class="flex items-center gap-4 cursor-pointer w-full">
+                            <div class="w-6 h-6 border-2 border-slate-400 rounded-md flex items-center justify-center shrink-0 transition-all">
+                                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+                            </div>
+                            <span class="item-text text-slate-200 text-sm sm:text-base font-medium">Revisei meu currículo e preparei exemplos práticos para cada experiência.</span>
+                        </label>
+                    </div>
+
+                    <!-- Checklist Item 3 -->
+                    <div class="flex items-start gap-4 p-3 hover:bg-slate-700/40 rounded-xl transition-colors">
+                        <input type="checkbox" id="check3" class="hidden checkbox-custom">
+                        <label for="check3" class="flex items-center gap-4 cursor-pointer w-full">
+                            <div class="w-6 h-6 border-2 border-slate-400 rounded-md flex items-center justify-center shrink-0 transition-all">
+                                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+                            </div>
+                            <span class="item-text text-slate-200 text-sm sm:text-base font-medium">Separei a roupa adequada e conferi o trajeto/link da videochamada.</span>
+                        </label>
+                    </div>
+
+                    <!-- Checklist Item 4 -->
+                    <div class="flex items-start gap-4 p-3 hover:bg-slate-700/40 rounded-xl transition-colors">
+                        <input type="checkbox" id="check4" class="hidden checkbox-custom">
+                        <label for="check4" class="flex items-center gap-4 cursor-pointer w-full">
+                            <div class="w-6 h-6 border-2 border-slate-400 rounded-md flex items-center justify-center shrink-0 transition-all">
+                                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+                            </div>
+                            <span class="item-text text-slate-200 text-sm sm:text-base font-medium">Preparei pelo menos 2 a 3 perguntas inteligentes para fazer ao recrutador.</span>
+                        </label>
+                    </div>
+
+                    <!-- Checklist Item 5 -->
+                    <div class="flex items-start gap-4 p-3 hover:bg-slate-700/40 rounded-xl transition-colors">
+                        <input type="checkbox" id="check5" class="hidden checkbox-custom">
+                        <label for="check5" class="flex items-center gap-4 cursor-pointer w-full">
+                            <div class="w-6 h-6 border-2 border-slate-400 rounded-md flex items-center justify-center shrink-0 transition-all">
+                                <i data-lucide="check" class="w-4 h-4 text-white hidden"></i>
+                            </div>
+                            <span class="item-text text-slate-200 text-sm sm:text-base font-medium">Testei a câmera, o microfone e a conexão de internet (se online).</span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; GuiaCarreira. Desenvolvido para transformar sua trajetória profissional.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+
+        // Script para o Accordion das perguntas
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i[data-lucide="chevron-down"]');
+            
+            content.classList.toggle('open');
+            if (icon) {
+                icon.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
